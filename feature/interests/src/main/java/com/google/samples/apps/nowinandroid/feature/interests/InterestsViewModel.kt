@@ -44,7 +44,7 @@ class InterestsViewModel @Inject constructor(
 
     private val _tabState = MutableStateFlow(
         InterestsTabState(
-            titles = listOf(R.string.interests_topics, R.string.interests_people),
+            titles = listOf(R.string.topics, R.string.people),
             currentIndex = 0
         )
     )

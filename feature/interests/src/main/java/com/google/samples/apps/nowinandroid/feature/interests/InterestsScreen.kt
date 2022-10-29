@@ -90,7 +90,7 @@ internal fun InterestsScreen(
             InterestsUiState.Loading ->
                 NiaLoadingWheel(
                     modifier = modifier,
-                    contentDesc = stringResource(id = R.string.interests_loading),
+                    contentDesc = stringResource(id = R.string.loading),
                 )
             is InterestsUiState.Interests ->
                 InterestsContent(
@@ -149,7 +149,7 @@ private fun InterestsContent(
 
 @Composable
 private fun InterestsEmptyScreen() {
-    Text(text = stringResource(id = R.string.interests_empty_header))
+    Text(text = stringResource(id = R.string.empty_header))
 }
 
 @DevicePreviews
@@ -163,7 +163,7 @@ fun InterestsScreenPopulated() {
                     topics = previewTopics.map { FollowableTopic(it, false) }
                 ),
                 tabState = InterestsTabState(
-                    titles = listOf(R.string.interests_topics, R.string.interests_people),
+                    titles = listOf(R.string.topics, R.string.people),
                     currentIndex = 0
                 ),
                 followAuthor = { _, _ -> },
@@ -184,7 +184,7 @@ fun InterestsScreenLoading() {
             InterestsScreen(
                 uiState = InterestsUiState.Loading,
                 tabState = InterestsTabState(
-                    titles = listOf(R.string.interests_topics, R.string.interests_people),
+                    titles = listOf(R.string.topics, R.string.people),
                     currentIndex = 0
                 ),
                 followAuthor = { _, _ -> },
@@ -205,7 +205,7 @@ fun InterestsScreenEmpty() {
             InterestsScreen(
                 uiState = InterestsUiState.Empty,
                 tabState = InterestsTabState(
-                    titles = listOf(R.string.interests_topics, R.string.interests_people),
+                    titles = listOf(R.string.topics, R.string.people),
                     currentIndex = 0
                 ),
                 followAuthor = { _, _ -> },
